@@ -1,0 +1,194 @@
+/* Reset sederhana */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    color: #ff3bce;
+    /* text-align: center; */
+    margin-bottom: 10px;
+}
+
+p {
+    /* text-align: center; */
+    margin-top: 10px;
+}
+
+/* Layout dasar */
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    position: relative;
+    background: url('WhatsApp\ Image\ 2025-09-11\ at\ 14.42.12.jpeg') center/cover no-repeat;
+    color: #fff;
+    padding: 260px 70px;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Overlay agar teks tetap terbaca */
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    /* hitam transparan */
+    z-index: 1;
+}
+
+header h1,
+header p,
+header .cta {
+    position: relative;
+    z-index: 2;
+    /* supaya di atas overlay */
+}
+
+
+/* Tombol */
+.cta {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background: #ff3bce;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta:hover {
+    background: #850b4e;
+}
+
+/* Section umum */
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Features cards */
+
+.features {
+    display: flex;
+    flex-direction: column; /* card ditumpuk ke bawah */
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    display: flex;
+    flex-direction: row; /* gambar kiri, teks kanan */
+    align-items: center;
+    gap: 20px;
+
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Bagian teks di kanan */
+.card-text {
+    display: flex;
+    flex-direction: column; /* judul di atas paragraf */
+    text-align: left;
+}
+
+.card img {
+    width: 180px;
+    height: auto;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #ff3bce;
+}
+
+.card p {
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background: #ff3bce;
+    ;
+    color: #ddd;
+    text-align: center;
+    padding: 20px;
+}
+
+/* --- Animasi --- */
+
+/* Header masuk dari kiri */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+header {
+    opacity: 0;
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+/* Efek timbul saat scroll */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.reveal.active {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* di HP balik ke atas-bawah */
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        max-width: 220px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 120px 20px;
+        text-align: center;
+    }
+}

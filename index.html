@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bijak Bermedia Sosial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Hero -->
+    <header>
+        <h1>Bijak Bermedia Sosial, Jangan Asal Sebar!</h1>
+        <p>
+            Sebuah kampanye literasi digital untuk mengajak masyarakat,
+            khususnya remaja, agar menggunakan media sosial dengan bijak dan bertanggung jawab.
+        </p>
+        <a href="#tentang" class="cta">Pelajari Lebih Lanjut</a>
+    </header>
+
+    <!-- Tentang -->
+    <section id="tentang" class="tentang reveal">
+        <h2>Tentang</h2>
+        <p>Di era digital, media sosial menjadi sarana utama bagi remaja untuk berkomunikasi dan mencari informasi.
+            Namun, penggunaan media sosial tanpa kontrol dapat menimbulkan dampak negatif, seperti penyebaran berita
+            bohong (hoaks), ujaran kebencian, dan informasi yang belum jelas kebenarannya. Hal ini dapat merugikan orang
+            lain bahkan memecah belah persatuan. Karena itu, penting bagi kita untuk selalu bijak dalam menggunakan
+            media sosial.
+        </p>
+        <h2>Tujuan</h2>
+        <p>
+            Mengajak orang untuk berpikir kritis sebelum membagikan informasi, Mengurangi dan menghindari untuk mengirim
+            penyebaran hoaks di kalangan pengguna media sosial, Meningkatkan kesadaran literasi digital agar media
+            sosial digunakan secara positif, Melakukan hal hal positif untuk mencegah salah penggunaan media sosial.
+
+        </p>
+    </section>
+
+    <!-- Fitur -->
+    <section class="reveal">
+        <h2>Lakukan</h2>
+        <div class="card reveal">
+            <img src="WhatsApp Image 2025-09-11 at 10.36.16 (1).jpeg" alt="Cek Fakta">
+            <div class="card-text">
+                <h3>Periksa Kebenaran</h3>
+                <p>memeriksa kebenaran suatu informasi dengan membandingkannya pada sumber yang terpercaya dan valid.
+                </p>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <img src="WhatsApp Image 2025-09-11 at 10.36.17.jpeg" alt="Etika Digital">
+            <div class="card-text">
+                <h3>Aturan Era Digital</h3>
+                <p>menggunakan teknologi secara bertanggung jawab, aman, dan menghormati orang lain.</p>
+            </div>
+        </div>
+
+        <div class="card reveal">
+            <img src="WhatsApp Image 2025-09-11 at 10.36.16.jpeg" alt="Konten Positif">
+            <div class="card-text">
+                <h3>Konten Positif</h3>
+                <p>memberikan manfaat, inspirasi, pengetahuan, hiburan yang sehat, serta dampak baik bagi orang lain.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Kesimpulan -->
+    <section class="kesimpulan reveal">
+        <h2>Kesimpulan</h2>
+        <p>
+            Bijak bermedia sosial bukan sekadar pilihan, melainkan kebutuhan di era digital saat ini.
+            Jika kita tidak hati-hati dalam menyaring informasi, maka potensi penyebaran hoaks dan ujaran kebencian
+            akan semakin besar. Dengan sikap kritis dan bertanggung jawab, kita bisa menciptakan ruang digital
+            yang sehat, aman, dan bermanfaat bagi semua.
+        </p>
+        <h2>Ayo!</h2>
+        <p class="ajakan">
+            Mari bersama-sama menjadi generasi cerdas yang berani berkata benar, menolak hoaks,
+            dan membagikan konten positif. Gunakan media sosial sebagai sarana membangun, bukan meruntuhkan. Ayo mulai
+            sekarang, jadilah bagian dari perubahan positif di dunia digital!
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="reveal">
+        <p>&copy; 2025 Kampanye Literasi Digital | Bijak Bermedia Sosial & Jangan Asal Sebar By AndienCantik.</p>
+    </footer>
+
+    <!-- Script animasi -->
+    <script>
+        // Intersection Observer untuk animasi scroll
+        const reveals = document.querySelectorAll('.reveal');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target); // supaya animasi hanya sekali
+                }
+            });
+        }, { threshold: 0.2 });
+
+        reveals.forEach(reveal => observer.observe(reveal));
+    </script>
+</body>
+
+</html>
