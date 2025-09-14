@@ -90,16 +90,13 @@
         <p>Bijak Bermedia Sosial & Jangan Asal Sebar. By AndienCantik.</p>
     </footer>
 
-    <!-- Script animasi -->
     <script>
-        // Intersection Observer untuk animasi scroll
         const reveals = document.querySelectorAll('.reveal');
-
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    obs.unobserve(entry.target); // supaya animasi hanya sekali
+                    obs.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
